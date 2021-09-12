@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import propTypes from 'prop-types';
 // import Potato from "./Potato";
 
@@ -61,15 +61,41 @@ Food.propTypes ={
 // }
 
 const App = () => {
+    // 생성자 대치 constructor
+    const [count, setCounter] = useState(0);
+    const increaseCount = () => { setCounter(prevNumber => prevNumber + 1); }
+    const decreaseCount = () => { setCounter(prevNumber => prevNumber - 1); }
+
+    // componentDidMount 구현하기
+    // useEffect는 첫번째 인자로 callback을 받는다.
+    useEffect(() => {
+        // 컴포넌트가 마운트되고 setTimeout실행
+        setTimeout(() => {
+            console.log(`you click ${count} times`)
+        }, 3000)
+    },[] )
+
+    // componentDidUpdate 구현하기
+    // useEffect는 첫번째 인자로 callback을 받는다.
+    useEffect(() => {
+        // 컴포넌트가 마운트되고 setTimeout실행
+        setTimeout(() => {
+            console.log(`you click ${count} times`)
+        }, 3000)
+    },[count] )
+
     return (
         <div>
-            {foodILike.map(item =>
-                <Food key={item.id}
-                      name={item.name}
-                      picture={item.link}
-                      rating={item.rating}
-                />
-            )}
+            <h1>The number is {count}</h1>
+            <button onClick={increaseCount}>Add +1</button>
+            <button onClick={decreaseCount}>Minus -1</button>
+            {/*{foodILike.map(item =>*/}
+            {/*    <Food key={item.id}*/}
+            {/*          name={item.name}*/}
+            {/*          picture={item.link}*/}
+            {/*          rating={item.rating}*/}
+            {/*    />*/}
+            {/*)}*/}
             {/*{index.html의 root와 이름이 같은 컴포넌트는 사용할 수 없다.}*/}
         </div>
     )
