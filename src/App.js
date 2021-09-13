@@ -36,7 +36,6 @@ const foodILike = [
     }
 ];
 
-
 const Food = ({name, picture, rating}) => {
     return (
         <div>
@@ -49,53 +48,44 @@ const Food = ({name, picture, rating}) => {
 
     );
 }
+
 Food.propTypes ={
     name: propTypes.string.isRequired,
     picture: propTypes.string.isRequired,
     rating: propTypes.number
 }
 
-//
-// const renddrFood = (item) => {
-//     return  <Food name = {item.name} picture = {item.link}/>
-// }
 
 const App = () => {
     // 생성자 대치 constructor
-    const [count, setCounter] = useState(0);
-    const increaseCount = () => { setCounter(prevNumber => prevNumber + 1); }
-    const decreaseCount = () => { setCounter(prevNumber => prevNumber - 1); }
+    const [isLoading, setLoading] = useState(true);
+    const [movies, setMovie] = useState([]);
+    const loadingProcess = () => {setLoading(prevState => !prevState)}
+    // const increaseCount = () => { setCounter(prevNumber => prevNumber + 1); }
+    // const decreaseCount = () => { setCounter(prevNumber => prevNumber - 1); }
 
     // componentDidMount 구현하기
     // useEffect는 첫번째 인자로 callback을 받는다.
     useEffect(() => {
         // 컴포넌트가 마운트되고 setTimeout실행
         setTimeout(() => {
-            console.log(`you click ${count} times`)
+            loadingProcess()
+            // console.log(`you click ${count} times`)
         }, 3000)
     },[] )
 
     // componentDidUpdate 구현하기
     // useEffect는 첫번째 인자로 callback을 받는다.
-    useEffect(() => {
-        // 컴포넌트가 마운트되고 setTimeout실행
-        setTimeout(() => {
-            console.log(`you click ${count} times`)
-        }, 3000)
-    },[count] )
+    // useEffect(() => {
+    //     // 컴포넌트가 마운트되고 setTimeout실행
+    //     setTimeout(() => {
+    //         console.log(`you click ${count} times`)
+    //     }, 3000)
+    // },[count] )
 
     return (
         <div>
-            <h1>The number is {count}</h1>
-            <button onClick={increaseCount}>Add +1</button>
-            <button onClick={decreaseCount}>Minus -1</button>
-            {/*{foodILike.map(item =>*/}
-            {/*    <Food key={item.id}*/}
-            {/*          name={item.name}*/}
-            {/*          picture={item.link}*/}
-            {/*          rating={item.rating}*/}
-            {/*    />*/}
-            {/*)}*/}
+            {isLoading ? 'Loading...' : 'We are ready'}
             {/*{index.html의 root와 이름이 같은 컴포넌트는 사용할 수 없다.}*/}
         </div>
     )
