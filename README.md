@@ -9,9 +9,6 @@
 ### 4) 가능하다면 배포까지
  
  
- isuue
- #09.16 useEffect []에 무슨인자를 줘야 경고메시지 없어짐 + 무한 api 호출 안하는지
-![image](https://user-images.githubusercontent.com/36693355/133471582-ad8b23b9-16e6-4a55-aca0-b421ec821c6e.png)
 
 
 ### class component vs Hooks
