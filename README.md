@@ -8,6 +8,11 @@
 ### 3) 가능하면 타입스크립트 적용
 ### 4) 가능하다면 배포까지
  
+ 
+ isuue
+ #09.16 useEffect []에 무슨인자를 줘야 경고메시지 없어짐 + 무한 api 호출 안하는지
+![image](https://user-images.githubusercontent.com/36693355/133471582-ad8b23b9-16e6-4a55-aca0-b421ec821c6e.png)
+
 
 ### class component vs Hooks
 2019년 v16.8 부터 함수형 컴포넌트에 리액트 훅(hook)을 지원해 주어서 현재는 공식 문서에서 함수형 컴포넌트와 훅을 함께 사용할 것을 권장
