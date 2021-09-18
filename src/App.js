@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import Movie from './Movie';
-
+import './App.css';
 
 const App = () => {
     // const reducer = (state, action) => {
@@ -59,7 +59,8 @@ const App = () => {
     // useEffect는 첫번째 인자로 callback을 받는다.
     useEffect(() => {
         loadingMovies();
-    }, [])
+    }, // eslint-disable-next-line react-hooks/exhaustive-deps
+    [])
 
     const loadingMovies = async () => {
         const response = await axios.get('https://yts.mx/api/v2/list_movies.json');
@@ -79,7 +80,10 @@ const App = () => {
 
     return (
         <section className={"container"}>
-            {isLoading ? (<div className={"loader"}>'Loading,,,' </div>) :
+            {isLoading ? (<div className={"loader"}>
+                            <span className={"loader__text"}>Loading,,,</span>
+                          </div>)
+                        :
                 (<div className ={"movies"}>
                     {(movies.map(item =>
                         <Movie key={item.id}
@@ -88,6 +92,7 @@ const App = () => {
                                title={item.title}
                                summary={item.summary}
                                poster={item.medium_cover_image}
+                               genres={item.genres}
                         />
                     ))}
                 </div>)
