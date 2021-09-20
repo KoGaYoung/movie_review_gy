@@ -29,6 +29,8 @@ typescript를 이용하면 protoType지정 안해줘도 된다는데 적용해�
 ## 09.16 Hooks rule
 https://ko.reactjs.org/docs/hooks-rules.html
 
+## 09.20 history를 사용하여 리다이렉트 기능 만들기
+
 
 
 # Getting Started with Create React App
