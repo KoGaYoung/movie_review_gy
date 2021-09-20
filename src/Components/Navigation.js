@@ -5,8 +5,9 @@ import './Navigation.css';
 const Navigation = () => {
     return (
         <div className={"nav"}>
-            <Link to="/" >Home</Link>
-            <Link to={{ pathname:'/about'}} >About</Link>
+            <Link to={'/'} >Home</Link>
+            <Link to={'/about'} >About</Link>
+            {/* <Link to={{ pathname:'/about', state: {fromNavigation: true}}} >About</Link> router props사용 */}
         </div>
 
     )

@@ -64,7 +64,7 @@ const Home = () => {
 
     const loadingMovies = async () => {
         const response = await axios.get('https://yts.mx/api/v2/list_movies.json');
-        console.log(response)
+        // console.log(response)
         movieSetting(response)
         loadingProcess()
     };
