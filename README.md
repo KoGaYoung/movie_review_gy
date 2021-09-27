@@ -31,7 +31,8 @@ https://ko.reactjs.org/docs/hooks-rules.html
 
 ## 09.20 history를 사용하여 리다이렉트 기능 만들기
 
-
+## 09.27 git npm build 이슈 해결 + git.io 배포 완료
+https://kogayoung.github.io/movie_review_gy/#/
 
 # Getting Started with Create React App
 ## 실행명령어 npm start
