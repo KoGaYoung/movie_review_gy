@@ -23,8 +23,9 @@ typescript를 이용하면 protoType지정 안해줘도 된다는데 적용해�
 함수형 컴포넌트는 클래스형 컴포넌트보다 선언하기가 좀 더 편하고, 메모리 자원을 덜 사용한다는 장점이 있다.
 과거에는 함수형 컴포넌트에서 state와 라이프사이클 API를 사용할 수 없었는데, 리액트 훅이 도입되면서 해결
 
-*일반 함수는 자신이 종속된 객체를 this로 가리키며, 화살표 함수는 자신이 종속된 인스턴스를 가리킨다. (https://devowen.com/298)
-*함수형 컴포넌트든 클래스형 컴포넌트든 state를 직접 조작하는 것이 아닌, setState나 useState와 같은 세터 함수를 반드시 사용하여 조작해야 한다.
+*일반 함수는 자신이 종속된 객체를 this로 가리키며, 화살표 함수는 자신이 종속된 인스턴스를 가리킨다. (https://devowen.com/298) <br/>
+*함수형 컴포넌트든 클래스형 컴포넌트든 state를 직접 조작하는 것이 아닌, setState나 useState와 같은 세터 함수를 반드시 사용하여 조작해야 한다.<br/>
+* https://codechasseur.tistory.com/98
 
 ## 09.16 Hooks rule
 https://ko.reactjs.org/docs/hooks-rules.html
