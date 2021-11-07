@@ -4,47 +4,6 @@ import Movie from '../Components/Movie';
 import './Home.css';
 
 const Home = () => {
-    // const reducer = (state, action) => {
-    //     switch (action.type) {
-    //
-    //         case 'LOADING':
-    //             return {
-    //                 loading: true,
-    //                 data: null,
-    //                 error: null
-    //             }
-    //         case 'SUCCESS':
-    //             return {
-    //                 loading: false,
-    //                 data: action.data,
-    //                 error: null
-    //             }
-    //         case 'ERROR':
-    //             return {
-    //                 loading: false,
-    //                 data: null,
-    //                 error: action.error
-    //             }
-    //         default:
-    //             throw new Error(`Unhandled action type: ${action.type}`);
-    //     }
-    // }
-    // const [state, fetchState] = useReducer(reducer, {loading: true, data: null, error: null})
-    // const {loading, data: mov, error} = state; // state.data 를 users 키워드로 조회
-    // const loadingMovies = async () => {
-    //     fetchState({type: 'LOADING'});
-    //     try {
-    //         const response = await axios.get('https://yts.mx/api/v2/list_movies.json');
-    //         debugger
-    //         fetchState({type: 'SUCCESS', data: response.data.data.movies});
-    //     } catch (e) {
-    //         fetchState({type: 'ERROR', error: e});
-    //     }
-    // };
-    // if (loading) return <div>로딩중..</div>;
-    // if (error) return <div>에러가 발생했습니다</div>;
-    // if (!mov) return null;
-
     // 생성자 대치 constructor
     const [isLoading, setLoading] = useState(true);
     const loadingProcess = () => {
