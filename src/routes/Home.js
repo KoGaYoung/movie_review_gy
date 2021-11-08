@@ -6,13 +6,20 @@ import './Home.css';
 const Home = () => {
     // 생성자 대치 constructor
     const [isLoading, setLoading] = useState(true);
+    const [movies, setMovie] = useState([]);
+
     const loadingProcess = () => {
         setLoading(prevState => !prevState)
     }
-    const [movies, setMovie] = useState([]);
     const movieSetting = (response) => {
         setMovie(prevState => response.data.data.movies)
     }
+
+    const loadingMovies = async () => {
+        const response = await axios.get('https://yts.mx/api/v2/list_movies.json');
+        movieSetting(response)
+        loadingProcess()
+    };
 
     // componentDidMount 구현하기
     // useEffect는 첫번째 인자로 callback을 받는다.
@@ -20,13 +27,6 @@ const Home = () => {
         loadingMovies();
     }, // eslint-disable-next-line react-hooks/exhaustive-deps
     [])
-
-    const loadingMovies = async () => {
-        const response = await axios.get('https://yts.mx/api/v2/list_movies.json');
-        // console.log(response)
-        movieSetting(response)
-        loadingProcess()
-    };
 
     // // componentDidUpdate 구현하기
     // // useEffect는 첫번째 인자로 callback을 받는다.
@@ -55,14 +55,9 @@ const Home = () => {
                         />
                     ))}
                 </div>)
-
             }
-            {/*{index.html의 root와 이름이 같은 컴포넌트는 사용할 수 없다.}*/}
-
         </section>
-
     )
-
 }
 
 export default Home;
