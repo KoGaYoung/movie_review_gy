@@ -1,10 +1,40 @@
 import React, {useState, useEffect} from 'react';
-import './Home.css';
+import './View.css';
+import Chart from '../Components/Chart';
+import List from '../Components/List';
 
 const View = () => {
-    // 생성자 대치 constructor
+    const menuList = {
+        0: <Chart/>,
+        1: <List/>,
+    };
+    // const tabContent = [
+    //     {
+    //         tabTitle: (
+    //             <li onClick={()=>changeTab()} > Chart </li>
+    //         ),
+    //         tabCont: (
+    //             <div> 탭1 내용 </div>
+    //         )
+    //     },
+    //     {
+    //         tabTitle: (
+    //             <li onClick={()=>changeTab()}> List </li>
+    //         ),
+    //         tabCont: (
+    //             <div> 탭2 내용 </div>
+    //         )
+    //     }
+    // ];
 
-    // const [isLoading, setLoading] = useState(true);
+
+    // 생성자 대치 constructor
+    const [mainTabIndex, setMainTabIndex] = useState(0);
+    const changeTab = () => {
+        setMainTabIndex(prevState => prevState === 0 ? 1 : 0);
+        console.log(mainTabIndex)
+    };
+
     // const [movies, setMovie] = useState([]);
     //
     // const loadingProcess = () => {
@@ -36,28 +66,20 @@ const View = () => {
     //     }, 3000)
     // },[isLoading] )
 
+
+
     return (
-        <section className={"container"}>
-            <span>here is chart</span>
-            <span>here is </span>
-            {/*{isLoading ? (<div className={"loader"}>*/}
-            {/*                <span className={"loader__text"}>Loading,,,</span>*/}
-            {/*              </div>)*/}
-            {/*            :*/}
-            {/*    (<div className ={"movies"}>*/}
-            {/*        {(movies.map(item =>*/}
-            {/*            <Movie key={item.id}*/}
-            {/*                   id={item.id}*/}
-            {/*                   year={item.year}*/}
-            {/*                   title={item.title}*/}
-            {/*                   summary={item.summary}*/}
-            {/*                   poster={item.medium_cover_image}*/}
-            {/*                   genres={item.genres}*/}
-            {/*            />*/}
-            {/*        ))}*/}
-            {/*    </div>)*/}
-            {/*}*/}
-        </section>
+        <div className="container">
+            <div className="menuBar">
+                <ul className="tabs">
+                    <li className={`${mainTabIndex === 0? 'is-active': ''}`} onClick={()=> changeTab()}>Chart</li>
+                    <li className={`${mainTabIndex === 1? 'is-active': ''}`} onClick={()=> changeTab()}>List</li>
+                </ul>
+            </div>
+            <div className="contentArea">
+                {menuList[mainTabIndex]}
+            </div>
+        </div>
     )
 }
 
