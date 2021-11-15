@@ -72,8 +72,8 @@ const View = () => {
         <div className="container">
             <div className="menuBar">
                 <ul className="tabs">
-                    <li className={`${mainTabIndex === 0? 'is-active': ''}`} onClick={()=> changeTab()}>Chart</li>
-                    <li className={`${mainTabIndex === 1? 'is-active': ''}`} onClick={()=> changeTab()}>List</li>
+                    <li className={`${mainTabIndex === 0 ? 'is-active': ''}`} onClick={()=> changeTab()}>Chart</li>
+                    <li className={`${mainTabIndex === 1 ? 'is-active': ''}`} onClick={()=> changeTab()}>List</li>
                 </ul>
             </div>
             <div className="contentArea">
